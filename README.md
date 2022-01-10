@@ -18,6 +18,17 @@ host
 
 - bin/console make:controller
 
+# to make twig
+
+-  composer require twig
+
+
+* bin\console debug:router
+
+
+
+
+
 
 
 

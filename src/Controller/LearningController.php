@@ -8,12 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LearningController extends AbstractController
 {
-    #[Route('/learning', name: 'learning')]
+    #[Route('/aboutme', name: 'aboutMe')]
     public function index(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/LearningController.php',
+        return $this->render('aboutme/index.html.twig', [
+            'controller_name' => 'LearningController',
         ]);
     }
 }
