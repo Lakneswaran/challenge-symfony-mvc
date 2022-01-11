@@ -27,11 +27,18 @@ class LearningController extends AbstractController
     #[Route('/about', name: 'about')]
     public function aboutMe(SessionInterface $session): Response
     {
-        $name = $session->get("name");
-        return $this->render('about/index.html.twig', [
-            'name' => $name,
-            
+        if($session->get('name')) {
+            $name = $session->get('name');
+        }
+        else {
+            $response = $this->forward('App\Controller\LearningController::showMyName');
+            return $response;
+        }
+        return $this->render('about/index.html.twig',[
+            'name' => $name
         ]);
+       
+       
     }
 
     /**
