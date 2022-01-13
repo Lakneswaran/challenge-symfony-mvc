@@ -25,7 +25,11 @@ host
 
 * bin\console debug:router
 
+# Exercise 2
 
+## Dependency Injection
+
+- 
 
 
 
